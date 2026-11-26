@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Solar System Project</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* --- Container & Layout Styles --- */
+            .container {
+                background-color: #968570;
+                width: 1125px;
+                border: 5px solid #fff1d5;
+                padding: 10px;
+            }
+            .big-text {
+                font-size: 30px; 
+                margin-bottom: 5px; 
+            }
+
+            /* --- Sticky Navigation Bar Styles --- */
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                display: flex; 
+                background-color: #333;
+            }
+
+            .navbar a {
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* --- Dropdown Menu Styles --- */
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            ul li {
+                margin: 8px 0;
+            }
+            ul li a {
+                background: white;
+                color: black;
+                padding: 4px 8px;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            /* Styling for images to make them fit containers nicely */
+            .planet-img {
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                display: block;
+                margin: 15px auto;
+                border-radius: 12px;
+                border: 4px solid #d6bd8d;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            }
+
+            .image-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin: 15px 0;
+            }
+
+            .image-card {
+                flex: 1 1 300px;
+                max-width: 450px;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 12px;
+                border-radius: 10px;
+                border: 2px solid #d6bd8d;
+                text-align: center;
+                margin: 0;
+            }
+
+            .image-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .image-card figcaption {
+                color: #fff;
+                font-weight: bold;
+                margin-top: 8px;
+                font-size: 0.95rem;
+            }
+        </style>
+    </head>
+    <body style="background-color: #222;">
+        
+        <!-- ================= NAVIGATION BAR ================= -->
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Other Solar System Planet 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Sun.html">Sun</a>
+                    <a href="Mercury.html">Mercury</a>
+                    <a href="Venus.html">Venus</a>
+                    <a href="Earth.html">Earth</a>
+                    <a href="Moon.html">Earth Moon</a>
+                    <a href="Mars.html">Mars</a>
+                    <a href="Jupiter.html">Jupiter</a>
+                    <a href="Saturn.html">Saturn</a>
+                    <a href="Uranus.html">Uranus</a>
+                    <a href="Neptune.html">Neptune</a>
+                </div>
+            </div> 
+        </div>
+
+        <!-- ================= PAGE HEADING & INTRO ================= -->
+        <h1 style="color:#ddc4af">Pluto Information</h1>
+        
+        <div class="container">
+            <p style="color:#f6ddbd">
+                Why is Pluto no longer a planet? Pluto was reclassified as a dwarf planet in 2006 by the International Astronomical Union because other objects might cross its orbit.
+                Pluto is a complex and mysterious world with mountains, valleys, plains, craters, and glaciers. 
+                It is located in the distant Kuiper Belt.  
+                Discovered in 1930, Pluto was long considered our solar system's ninth planet. 
+                But after the discovery of similar worlds deeper in the Kuiper Belt, Pluto was reclassified as a dwarf planet in 2006 by the International Astronomical Union.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= DWARF PLANET SECTION ================= -->
+        <h2 class="big-text" style="color:#ddc4af;">Dwarf Planet</h2>
+        <div class="container">
+            <p style="color:#f6ddbd">
+                According to the 2006 IAU Resolution, "a dwarf planet is an object in orbit around the Sun that is large enough to pull itself into a nearly round shape but has not been able to clear its orbit of debris." 
+                The IAU stated that Pluto falls into the dwarf planet category because it is located in a part of our solar system known as the Trans-Neptunian region (beyond Neptune) where other objects might cross Pluto's orbital path.  
+                Pluto is only about 1,400 miles wide. At that small size, Pluto is only about half the width of the United States. 
+                It's about 3.6 billion miles away from the Sun, and it has a thin atmosphere composed mostly of nitrogen, methane, and carbon monoxide. 
+                On average, Pluto’s temperature is -387°F (-232°C), making it too cold to sustain life.  
+                Pluto is orbited by five known moons, the largest of which is Charon. 
+                Charon is about half the size of Pluto itself, making it the largest satellite relative to the planet it orbits in our solar system. 
+                Pluto and Charon are often referred to as a "double planet."
+            </p>
+        </div>
+        <br>
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#ddc4af; text-align: center;">Pluto Feature Gallery</h2>
+        <div class="container">
+            <div class="image-gallery">
+                <figure class="image-card">
+                    <img src="Images/Pluto_surface.jpg" 
+                         alt="One of the Clearest Pluto Surface Images">
+                    <figcaption>Pluto Surface</figcaption>
+                </figure>
+                <figure class="image-card">
+                    <img src="Images/Pluto_Horizon.jpg" 
+                         alt="This composite of enhanced color images of Pluto (lower right) and Charon (upper left), was taken by NASA’s New Horizons spacecraft as it passed through the Pluto system on July 14, 2015.">
+                    <figcaption>Pluto and Charon (New Horizons)</figcaption>
+                </figure>
+            </div>
+        </div>
+        
+        <!-- ================= SIZE AND DISTANCE SECTION ================= -->
+        <h2 class="big-text" style="color:#ddc4af;">Size and Distance</h2>
+        <div class="container">
+            <p style="color:#f6ddbd">
+                Pluto has an equatorial diameter of about 1,477 miles (2,377 kilometers). 
+                Pluto is about 1/5th the width of Earth.   
+                From an average distance of about 3.7 billion miles (5.9 billion kilometers), Pluto is about 39 times farther away than the Earth is from the Sun. 
+                From this distance, it takes sunlight 5.5 hours to travel from the Sun to Pluto.  
+                If you were to stand on the surface of Pluto at noon, the Sun would be 1/900 the brightness it is here on Earth, or about 300 times as bright as our full moon. 
+                There is a moment each day near sunset here on Earth when the light is the same brightness as midday on Pluto.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ORBIT AND ROTATION SECTION ================= -->
+        <h2 class="big-text" style="color:#ddc4af;">Orbit and Rotation</h2>
+        <div class="container">
+            <p style="color:#f6ddbd">
+                Pluto's orbit around the Sun is unusual compared to the planets: it's both elliptical and tilted. 
+                Pluto's 248-year-long, oval-shaped orbit can take it as far as 49.3 astronomical units (AU) from the Sun, and as close as 30 AU. 
+                (One AU is the mean distance between Earth and the Sun: about 93 million miles or 150 million kilometers.) 
+                But on average, Pluto is 3.7 billion miles (5.9 billion kilometers) away from the Sun, or 39 AU.  
+                From 1979 to 1999, Pluto was near perihelion, when it is closest to the Sun. During this time, Pluto was actually closer to the Sun than Neptune.  
+                One day on Pluto takes about 153 hours. Its axis of rotation is tilted 57 degrees with respect to the plane of its orbit around the Sun, so it spins almost on its side. 
+                Pluto also exhibits a retrograde rotation; spinning from east to west like Venus and Uranus.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= FORMATION SECTION ================= -->
+        <h2 class="big-text" style="color:#ddc4af;">Formation</h2>
+        <div class="container">
+            <p style="color:#f6ddbd">
+                Dwarf planet Pluto is a member of a group of objects that orbit in a disc-like zone beyond the orbit of Neptune called the Kuiper Belt. 
+                This distant realm is populated with thousands of miniature icy worlds, which formed early in the history of our solar system about 4.5 billion years ago. 
+                These icy, rocky bodies are called Kuiper Belt objects, transneptunian objects, or plutoids. 
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= STRUCTURE SECTION ================= -->
+        <h2 class="big-text" style="color:#ddc4af;">Structure</h2>
+        <div class="container">
+            <p style="color:#f6ddbd">
+                Pluto is about two-thirds the diameter of Earth's Moon and probably has a rocky core surrounded by a mantle of water ice. 
+                Interesting ices like methane and nitrogen frost coat the surface. Due to its lower density, Pluto's mass is about one-sixth that of Earth's Moon.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= SURFACE SECTION ================= -->
+        <h2 class="big-text" style="color:#ddc4af;">Surface</h2>
+        <div class="container">
+            <p style="color:#f6ddbd">
+                Pluto's surface has mountains, valleys, plains, and craters. 
+                The temperature on Pluto can be as cold as -375 to -400 degrees Fahrenheit (-226 to -240 degrees Celsius).  
+                Pluto's tallest mountains are 6,500 to 9,800 feet (2 to 3 kilometers) in height. 
+                The mountains are big blocks of water ice, sometimes with a coating of frozen gases like methane. 
+                Long troughs and valleys as long as 370 miles (600 kilometers) add to the interesting features of this faraway dwarf planet.  
+                Craters as large as 162 miles (260 kilometers) in diameter dot some of the landscape on Pluto, with some showing signs of erosion and filling. 
+                This suggests tectonic forces are slowly resurfacing Pluto.  
+                The most prominent plains observed on Pluto appear to be made of frozen nitrogen gas and show no craters. 
+                These plains do show structures suggesting convection (blobs of material circulating up and down).
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ATMOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#ddc4af;">Atmosphere</h2>
+        <div class="container">
+            <p style="color:#f6ddbd">
+                Pluto's thin, tenuous atmosphere expands when it comes closer to the Sun and collapses as it moves farther away – similar to a comet. 
+                The main constituent is molecular nitrogen, though molecules of methane and carbon monoxide have also been detected.  
+                When Pluto is close to the Sun, its surface ices sublimate (changing directly from solid to gas) and rise to temporarily form a thin atmosphere. 
+                Pluto's low gravity (about 6% of Earth's) causes the atmosphere to be much more extended in altitude than our planet's atmosphere. 
+                Pluto becomes much colder during the part of each year when it is traveling far away from the Sun. During this time, the bulk of the planet's atmosphere may freeze and fall as snow to the surface.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= MAGNETOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#ddc4af;">Magnetosphere</h2>
+        <div class="container">
+            <p style="color:#f6ddbd">
+                It isn't known whether Pluto has a magnetic field, but its small size and slow rotation suggest little or none.
+            </p>
+        </div>
+        <br>
+    
+    <!-- Interactive Pluto Poll Widget -->
+        <div class="calculator-card" style="margin: 20px auto; background: #52473b; padding: 20px; border-radius: 10px; border: 2px solid #fff1d5; text-align: center; max-width: 400px;">
+            <h3 style="color: #ddc4af;">Should Pluto be a Planet?</h3>
+            <p style="color: #f6ddbd; font-size: 14px;">Cast your vote on Pluto's classification!</p>
+            <div style="margin: 15px 0;">
+                <button onclick="vote('planet')" style="padding: 10px 15px; background: #968570; color:white; border:1px solid #fff1d5; border-radius:5px; cursor:pointer; margin-right: 5px;">Yes, it's a planet!</button>
+                <button onclick="vote('dwarf')" style="padding: 10px 15px; background: #968570; color:white; border:1px solid #fff1d5; border-radius:5px; cursor:pointer;">No, Dwarf Planet is fair</button>
+            </div>
+            <div id="voteResult" style="color: #42f59b; font-weight: bold; margin-top: 10px; min-height: 25px;"></div>
+        </div>
+
+        <script>
+            function vote(choice) {
+                const result = document.getElementById('voteResult');
+                if (choice === 'planet') {
+                    result.innerText = "You voted: Planet! (Sentiment matches childhood nostalgia, but IAU rules require clearing orbital debris!)";
+                } else {
+                    result.innerText = "You voted: Dwarf Planet! (Scientifically accurate according to the 2006 IAU guidelines.)";
+                }
+            }
+        </script>
+        
+    <!-- ================= CREDITS & FOOTER ================= -->
+        <p style="color:white">
+            Credit: https://science.nasa.gov/dwarf-planets/pluto/facts/
+        </p>
+    </body>
+</html>

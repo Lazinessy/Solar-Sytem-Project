@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Solar System Project</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* --- Container & Layout Styles --- */
+            .container {
+                background-color: #d9a989;
+                width: 1125px;
+                border: 5px solid #451804;
+                padding: 10px;
+            }
+            .big-text {
+                font-size: 30px; 
+                margin-bottom: 5px; 
+            }
+
+            /* --- Sticky Navigation Bar Styles --- */
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                display: flex; 
+                background-color: #333;
+            }
+
+            .navbar a {
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* --- Dropdown Menu Styles --- */
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* --- Calculator Card Styles --- */
+            .calculator-card {
+                background-color: #161b26;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+                width: 320px;
+                text-align: center;
+                margin: 20px 0;
+            }
+            .input-group {
+                margin-bottom: 15px;
+                text-align: left;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 14px;
+                color: #a0aec0;
+            }
+            input, select {
+                width: 100%;
+                padding: 10px;
+                border-radius: 6px;
+                border: 1px solid #2d3748;
+                background-color: #1a202c;
+                color: #fff;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+            button {
+                width: 100%;
+                padding: 12px;
+                background-color: #0066cc;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background 0.2s;
+            }
+            button:hover {
+                background-color: #0052a3;
+            }
+            .result {
+                margin-top: 20px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #42f59b;
+                min-height: 24px;
+            }
+
+            /* Styling for images to make them fit containers nicely */
+            .planet-img {
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                display: block;
+                margin: 15px auto;
+                border-radius: 12px;
+                border: 4px solid #d6bd8d;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            }
+
+            .image-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin: 15px 0;
+            }
+
+            .image-card {
+                flex: 1 1 300px;
+                max-width: 450px;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 12px;
+                border-radius: 10px;
+                border: 2px solid #d6bd8d;
+                text-align: center;
+                margin: 0;
+            }
+
+            .image-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .image-card figcaption {
+                color: #fff;
+                font-weight: bold;
+                margin-top: 8px;
+                font-size: 0.95rem;
+            }
+        </style>
+    </head>
+    <body style="background-color: #222;">
+
+        <!-- ================= NAVIGATION BAR ================= -->
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Other Solar System Planet 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Sun.html">Sun</a>
+                    <a href="Mercury.html">Mercury</a>
+                    <a href="Venus.html">Venus</a>
+                    <a href="Earth.html">Earth</a>
+                    <a href="Moon.html">Earth Moon</a>
+                    <a href="Jupiter.html">Jupiter</a>
+                    <a href="Saturn.html">Saturn</a>
+                    <a href="Uranus.html">Uranus</a>
+                    <a href="Neptune.html">Neptune</a>
+                    <a href="Pluto.html">Pluto</a>
+                </div>
+            </div> 
+        </div>
+
+        <!-- ================= PAGE MAIN HEADING & INTRO ================= -->
+        <h1 style="color:#f0e7e7">Mars Information</h1>
+        
+        <div class="container">
+            <p style="color:#c1440e">
+                Mars — the fourth planet from the Sun — is a dusty, cold, desert world with a very thin atmosphere. 
+                This dynamic planet has seasons, polar ice caps, extinct volcanoes, canyons, and weather.
+                Mars is one of the most explored bodies in our solar system, and it's the only planet where we've sent rovers to roam the alien landscape. 
+                NASA missions have found lots of evidence that Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= GALLERY SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#f0e7e7; text-align: center;">Mars Feature Gallery</h2>
+        <div class="container">
+            <div class="image-gallery">
+                <figure class="image-card">
+                    <img src="Images/Curiosity_Rover.jpg" 
+                         alt="When the Curiosity Rover Landed On Mars">
+                    <figcaption>Curiosity Rover</figcaption>
+                </figure>
+                <figure class="image-card">
+                    <img src="Images/mars_dust_storm.jpg" 
+                         alt="Planet-encircling dust storm in July 2018 that obscured regional landmarks">
+                    <figcaption>Dust Storm</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- ================= SIZE AND DISTANCE SECTION ================= -->
+        <h2 class="big-text" style="color:#f0e7e7;">Size and Distance</h2>
+        <div class="container">
+            <p style="color:#c1440e">
+                With a radius of 2,106 miles (3,390 kilometers), Mars is about half the size of Earth. 
+                If Earth were the size of a nickel, Mars would be about as big as a raspberry.  
+                From an average distance of 142 million miles (228 million kilometers), Mars is 1.5 astronomical units away from the Sun. 
+                One astronomical unit (abbreviated as AU), is the distance from the Sun to Earth. 
+                From this distance, it takes sunlight 13 minutes to travel from the Sun to Mars.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ORBIT AND ROTATION SECTION ================= -->
+        <h2 class="big-text" style="color:#f0e7e7;">Orbit and Rotation</h2>
+        <div class="container">
+            <p style="color:#c1440e">
+                As Mars orbits the Sun, it completes one rotation every 24.6 hours, which is very similar to one day on Earth (23.9 hours). 
+                Martian days are called sols — short for "solar day." 
+                A year on Mars lasts 669.6 sols, which is the same as 687 Earth days.  
+                Mars' axis of rotation is tilted 25 degrees with respect to the plane of its orbit around the Sun. 
+                This is another similarity with Earth, which has an axial tilt of 23.4 degrees. 
+                Like Earth, Mars has distinct seasons, but they last longer than seasons here on Earth since Mars takes longer to orbit the Sun (because it's farther away). 
+                And while here on Earth the seasons are evenly spread over the year, lasting 3 months (or one quarter of a year), on Mars the seasons vary in length because of Mars' elliptical, egg-shaped orbit around the Sun.  
+                Spring in the northern hemisphere (autumn in the southern) is the longest season at 194 sols. 
+                Autumn in the northern hemisphere (spring in the southern) is the shortest at 142 days. Northern winter/southern summer is 154 sols, and northern summer/southern winter is 178 sols.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= FORMATION SECTION ================= -->
+        <h2 class="big-text" style="color:#f0e7e7;">Formation</h2>
+        <div class="container">
+            <p style="color:#c1440e">
+                When the solar system settled into its current layout about 4.5 billion years ago, Mars formed when gravity pulled swirling gas and dust in to become the fourth planet from the Sun. 
+                Mars is about half the size of Earth, and like its fellow terrestrial planets, it has a central core, a rocky mantle, and a solid crust.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= STRUCTURE SECTION ================= -->
+        <h2 class="big-text" style="color:#f0e7e7;">Structure</h2>
+        <div class="container">
+            <p style="color:#c1440e">
+                Mars has a dense core at its center between 930 and 1,300 miles (1,500 to 2,100 kilometers) in radius. 
+                It's made of iron, nickel, and sulfur. 
+                Surrounding the core is a rocky mantle between 770 and 1,170 miles (1,240 to 1,880 kilometers) thick, and above that, a crust made of iron, magnesium, aluminum, calcium, and potassium. 
+                This crust is between 6 and 30 miles (10 to 50 kilometers) deep.  
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= SURFACE SECTION ================= -->
+        <h2 class="big-text" style="color:#f0e7e7;">Surface</h2>
+        <div class="container">
+            <p style="color:#c1440e">
+                The Red Planet is actually many colors. 
+                At the surface, we see colors such as brown, gold, and tan. 
+                The reason Mars looks reddish is due to oxidization — or rusting — of iron in the rocks, regolith (Martian “soil”), and dust of Mars. 
+                This dust gets kicked up into the atmosphere and from a distance makes the planet appear mostly red.  
+                Interestingly, while Mars is about half the diameter of Earth, its surface has nearly the same area as Earth’s dry land. 
+                Its volcanoes, impact craters, crustal movement, and atmospheric conditions such as dust storms have altered the landscape of Mars over many years, creating some of the solar system's most interesting topographical features.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ATMOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#f0e7e7;">Atmosphere</h2>
+        <div class="container">
+            <p style="color:#c1440e">
+                Mars has a thin atmosphere made up mostly of carbon dioxide, nitrogen, and argon gases. 
+                To our eyes, the sky would be hazy and red because of suspended dust instead of the familiar blue tint we see on Earth. 
+                Mars' sparse atmosphere doesn't offer much protection from impacts by such objects as meteorites, asteroids, and comets.  
+                The temperature on Mars can be as high as 70 degrees Fahrenheit (20 degrees Celsius) or as low as about -225 degrees Fahrenheit (-153 degrees Celsius). 
+                And because the atmosphere is so thin, heat from the Sun easily escapes this planet. 
+                If you were to stand on the surface of Mars on the equator at noon, it would feel like spring at your feet (75 degrees Fahrenheit or 24 degrees Celsius) and winter at your head (32 degrees Fahrenheit or 0 degrees Celsius).  
+                Occasionally, winds on Mars are strong enough to create dust storms that cover much of the planet. After such storms, it can be months before all of the dust settles. 
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= MAGNETOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#f0e7e7;">Magnetosphere</h2>
+        <div class="container">
+            <p style="color:#c1440e">
+                Mars has no global magnetic field today, but areas of the Martian crust in the southern hemisphere are highly magnetized, indicating traces of a magnetic field from 4 billion years ago. 
+            </p>
+        </div>
+        <br>
+
+        <!-- Interactive Mars Sol & Temperature Converter Widget -->
+        <div style="margin: 20px auto; background: #26140c; padding: 20px; border-radius: 10px; border: 2px solid #c1440e; text-align: center; max-width: 420px;">
+            <h3 style="color: #f0e7e7; margin-top: 0;">Mars Sol & Condition Explorer</h3>
+            
+            <label for="earthDaysInput" style="color: #d9a989; font-size: 14px; display: block; margin-bottom: 6px; text-align: left;">
+                Convert Earth Days to Martian Sols:
+            </label>
+            <input type="number" id="earthDaysInput" placeholder="Enter Earth days (e.g., 687)..." min="0" step="any"
+                style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #c1440e; background: #1a202c; color: #fff; font-size: 15px; box-sizing: border-box; margin-bottom: 10px;">
+            <button onclick="convertToSols()" style="width: 100%; padding: 10px; background: #c1440e; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 15px;">
+                Convert to Sols
+            </button>
+            <div id="solResult" style="color: #42f59b; font-size: 15px; font-weight: bold; min-height: 28px; margin-bottom: 15px;"></div>
+
+            <label for="marsSpotSelect" style="color: #d9a989; font-size: 14px; display: block; margin-bottom: 6px; text-align: left;">
+                Inspect Martian Temperature Scenarios:
+            </label>
+            <select id="marsSpotSelect" onchange="updateMarsTemp()" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #c1440e; background: #1a202c; color: #fff; font-size: 15px; margin-bottom: 12px;">
+                <option value="high">Warmest Recorded (~70°F / 20°C)</option>
+                <option value="equator-noon">Equator at Noon (75°F at feet / 32°F at head)</option>
+                <option value="low">Deep Freeze (~-225°F / -153°C)</option>
+            </select>
+            <div id="marsTempDisplay" style="color: #f0e7e7; font-size: 14px; min-height: 60px; text-align: left; padding: 10px; background: rgba(0,0,0,0.35); border-radius: 6px; line-height: 1.4;"></div>
+        </div>
+
+        <script>
+            function convertToSols() {
+                const days = parseFloat(document.getElementById('earthDaysInput').value);
+                const solResult = document.getElementById('solResult');
+
+                if (isNaN(days) || days < 0) {
+                    solResult.style.color = '#ff4d4d';
+                    solResult.innerText = "Please enter a valid non-negative number of Earth days.";
+                    return;
+                }
+
+                // 1 Earth day = 23.9 hrs; 1 Martian sol = 24.6 hrs -> ratio ~ 0.9715 sols per Earth day
+                const sols = (days * (23.9 / 24.6)).toFixed(2);
+                solResult.style.color = '#42f59b';
+                solResult.innerText = `${days} Earth day(s) ≈ ${sols} Martian sols`;
+            }
+
+            const marsScenarios = {
+                "high": "Because Mars's thin atmosphere lets heat escape easily, ~70°F (20°C) is near the upper end of daytime highs.",
+                "equator-noon": "Standing at the Martian equator at noon, thin air creates a sharp vertical temperature gradient: ~75°F (24°C) near your feet and ~32°F (0°C) near your head.",
+                "low": "Without a thick blanket of atmosphere, temperatures on Mars can plunge to around -225°F (-153°C)."
+            };
+
+            function updateMarsTemp() {
+                const selected = document.getElementById('marsSpotSelect').value;
+                document.getElementById('marsTempDisplay').innerText = marsScenarios[selected];
+            }
+
+            updateMarsTemp();
+        </script>
+
+        <!-- ================= CREDITS & FOOTER ================= -->
+        <br>
+        <p style="color:white">
+            Credit: https://science.nasa.gov/mars/facts/
+        </p>
+    </body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Solar System Project</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* --- Container & Layout Styles --- */
+            .container {
+                background-color: #65868B;
+                width: 1125px;
+                border: 5px solid #BBE1E4;
+                padding: 10px;
+            }
+            .big-text {
+                font-size: 30px; 
+                margin-bottom: 5px; 
+            }
+
+            /* --- Sticky Navigation Bar Styles --- */
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                display: flex; 
+                background-color: #333;
+            }
+
+            .navbar a {
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* --- Dropdown Menu Styles --- */
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* --- Calculator Card Styles --- */
+            .calculator-card {
+                background-color: #161b26;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+                width: 320px;
+                text-align: center;
+                margin: 20px 0;
+            }
+            .input-group {
+                margin-bottom: 15px;
+                text-align: left;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 14px;
+                color: #a0aec0;
+            }
+            input, select {
+                width: 100%;
+                padding: 10px;
+                border-radius: 6px;
+                border: 1px solid #2d3748;
+                background-color: #1a202c;
+                color: #fff;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+            button {
+                width: 100%;
+                padding: 12px;
+                background-color: #0066cc;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background 0.2s;
+            }
+            button:hover {
+                background-color: #0052a3;
+            }
+            .result {
+                margin-top: 20px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #42f59b;
+                min-height: 24px;
+            }
+
+            /* Styling for images to make them fit containers nicely */
+            .planet-img {
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                display: block;
+                margin: 15px auto;
+                border-radius: 12px;
+                border: 4px solid #d6bd8d;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            }
+
+            .image-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin: 15px 0;
+            }
+
+            .image-card {
+                flex: 1 1 300px;
+                max-width: 450px;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 12px;
+                border-radius: 10px;
+                border: 2px solid #d6bd8d;
+                text-align: center;
+                margin: 0;
+            }
+
+            .image-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .image-card figcaption {
+                color: #fff;
+                font-weight: bold;
+                margin-top: 8px;
+                font-size: 0.95rem;
+            }
+        </style>
+    </head>
+    <body style="background-color: #222;">
+        
+        <!-- ================= NAVIGATION BAR ================= -->
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Other Solar System Planet 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Sun.html">Sun</a>
+                    <a href="Mercury.html">Mercury</a>
+                    <a href="Venus.html">Venus</a>
+                    <a href="Earth.html">Earth</a>
+                    <a href="Moon.html">Earth Moon</a>
+                    <a href="Mars.html">Mars</a>
+                    <a href="Jupiter.html">Jupiter</a>
+                    <a href="Saturn.html">Saturn</a>
+                    <a href="Neptune.html">Neptune</a>
+                    <a href="Pluto.html">Pluto</a>
+                </div>
+            </div> 
+        </div>
+
+        <!-- ================= PAGE HEADING & INTRO ================= -->
+        <h1 style="color:#93B8BE">Uranus Information</h1>
+        
+        <div class="container">
+            <p style="color:#D5FBFC">
+                Uranus is the seventh planet from the Sun, and it has the third largest diameter of planets in our solar system. Uranus appears to spin sideways.
+                Uranus is a very cold and windy world. The ice giant is surrounded by 13 faint rings and 28 small moons. 
+                Uranus rotates at a nearly 90-degree angle from the plane of its orbit. 
+                This unique tilt makes Uranus appear to spin sideways, orbiting the Sun like a rolling ball.  
+                Uranus was the first planet found with the aid of a telescope. 
+                It was discovered in 1781 by astronomer William Herschel, although he originally thought it was either a comet or a star. 
+                It was two years later that the object was universally accepted as a new planet, in part because of observations by astronomer Johann Elert Bode.
+            </p>
+        </div>
+        <br>
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#93B8BE; text-align: center;">Uranus Feature Gallery</h2>
+        <div class="container">
+            <div class="image-gallery">
+                <figure class="image-card">
+                    <img src="Images/Uranus.jpg" 
+                         alt="Just an Images of Uranus">
+                    <figcaption>Uranus</figcaption>
+                </figure>
+                <figure class="image-card">
+                    <img src="Images/Uranus_ring.jpg" 
+                         alt="A close up shot of Uranus">
+                    <figcaption>Uranus Ring</figcaption>
+                </figure>
+            </div>
+        </div>
+        
+        <!-- ================= SIZE AND DISTANCE SECTION ================= -->
+        <h2 class="big-text" style="color:#93B8BE;">Size and Distance</h2>
+        <div class="container">
+            <p style="color:#D5FBFC">
+                With an equatorial diameter of 31,763 miles (51,118 kilometers), Uranus is four times wider than Earth. 
+                If Earth was the size of a nickel, Uranus would be about as big as a softball.  
+                From an average distance of 1.8 billion miles (2.9 billion kilometers), Uranus is about 19 astronomical units away from the Sun. 
+                One astronomical unit (abbreviated as AU), is the distance from the Sun to Earth. 
+                From this distance, it takes sunlight 2 hours and 40 minutes to travel from the Sun to Uranus.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ORBIT AND ROTATION SECTION ================= -->
+        <h2 class="big-text" style="color:#93B8BE;">Orbit and Rotation</h2>
+        <div class="container">
+            <p style="color:#D5FBFC">
+                One day on Uranus takes about 17 hours. 
+                This is the amount of time it takes Uranus to rotate, or spin once around its axis. 
+                Uranus makes a complete orbit around the Sun (a year in Uranian time) in about 84 Earth years (30,687 Earth days).  
+                Uranus is the only planet whose equator is nearly at a right angle to its orbit, with a tilt of 97.77 degrees. 
+                This may be the result of a collision with an Earth-sized object long ago. 
+                This unique tilt causes Uranus to have the most extreme seasons in the solar system. 
+                For nearly a quarter of each Uranian year, the Sun shines directly over each pole, plunging the other half of the planet into a 21-year-long, dark winter.  
+                Uranus is also one of just two planets that rotate in the opposite direction than most of the planets. Venus is the other.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= RINGS SECTION ================= -->
+        <h2 class="big-text" style="color:#93B8BE;">Rings</h2>
+        <div class="container">
+            <p style="color:#D5FBFC">
+                Uranus has two sets of rings. The inner system of nine rings consists mostly of narrow, dark grey rings. 
+                There are two outer rings: the innermost one is reddish like dusty rings elsewhere in the solar system, and the outer ring is blue like Saturn's E ring.  
+                In order of increasing distance from the planet, the rings are called Zeta, 6, 5, 4, Alpha, Beta, Eta, Gamma, Delta, Lambda, Epsilon, Nu, and Mu. Some of the larger rings are surrounded by belts of fine dust.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= FORMATION SECTION ================= -->
+        <h2 class="big-text" style="color:#93B8BE;">Formation</h2>
+        <div class="container">
+            <p style="color:#D5FBFC">
+                Uranus took shape when the rest of the solar system formed about 4.5 billion years ago – when gravity pulled swirling gas and dust in to become this ice giant. 
+                Like its neighbor Neptune, Uranus likely formed closer to the Sun and moved to the outer solar system about 4 billion years ago, where it is the seventh planet from the Sun.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= STRUCTURE SECTION ================= -->
+        <h2 class="big-text" style="color:#93B8BE;">Structure</h2>
+        <div class="container">
+            <p style="color:#D5FBFC">
+                Uranus is one of two ice giants in the outer solar system (the other is Neptune). 
+                Most (80% or more) of the planet's mass is made up of a hot dense fluid of "icy" materials – water, methane, and ammonia – above a small rocky core. 
+                Near the core, it heats up to 9,000 degrees Fahrenheit (4,982 degrees Celsius).  
+                Uranus is slightly larger in diameter than its neighbor Neptune, yet smaller in mass. 
+                It is the second least dense planet; Saturn is the least dense of all.  
+                Uranus gets its blue-green color from methane gas in the atmosphere. 
+                Sunlight passes through the atmosphere and is reflected back out by Uranus' cloud tops. 
+                Methane gas absorbs the red portion of the light, resulting in a blue-green color.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= SURFACE SECTION ================= -->
+        <h2 class="big-text" style="color:#93B8BE;">Surface</h2>
+        <div class="container">
+            <p style="color:#D5FBFC">
+              As an ice giant, Uranus doesn’t have a true surface. The planet is mostly swirling fluids. 
+              While a spacecraft would have nowhere to land on Uranus, it wouldn’t be able to fly through its atmosphere unscathed either. 
+              The extreme pressures and temperatures would destroy a metal spacecraft.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ATMOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#93B8BE;">Atmosphere</h2>
+        <div class="container">
+            <p style="color:#D5FBFC">
+                Uranus' atmosphere is mostly hydrogen and helium, with a small amount of methane and traces of water and ammonia. 
+                The methane gives Uranus its signature blue color.  
+                While Voyager 2 saw only a few discrete clouds, a Great Dark Spot, and a small dark spot during its flyby in 1986 – 
+                more recent observations reveal that Uranus exhibits dynamic clouds as it approaches equinox, including rapidly changing bright features.  
+                Uranus' planetary atmosphere, with a minimum temperature of 49K (-224.2 degrees Celsius) makes it even colder than Neptune in some places.  
+                Wind speeds can reach up to 560 miles per hour (900 kilometers per hour) on Uranus. 
+                Winds are retrograde at the equator, blowing in the reverse direction of the planet’s rotation. 
+                But closer to the poles, winds shift to a prograde direction, flowing with Uranus' rotation.  
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= MAGNETOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#93B8BE;">Magnetosphere</h2>
+        <div class="container">
+            <p style="color:#D5FBFC">
+                Uranus has an unusual, irregularly shaped magnetosphere. 
+                Magnetic fields are typically in alignment with a planet's rotation, but Uranus' magnetic field is tipped over: 
+                the magnetic axis is tilted nearly 60 degrees from the planet's axis of rotation, and is also offset from the center of the planet by one-third of the planet's radius.  
+                Uranus has auroras, but they are not in line with the poles like they are on Earth, Jupiter, and Saturn. 
+                This is due to the planet's lopsided magnetic field.  
+                The magnetosphere tail behind Uranus opposite the Sun extends into space for millions of miles. 
+                Its magnetic field lines are twisted by Uranus’ sideways rotation into a long corkscrew shape.
+            </p>
+        </div>
+        <br>
+        
+       <!-- Interactive Uranus Season Simulator Widget -->
+        <div style="margin: 20px auto; background: #1c2c2f; padding: 20px; border-radius: 10px; border: 2px solid #BBE1E4; text-align: center; max-width: 420px;">
+            <h3 style="color: #93B8BE; margin-top: 0;">Uranus 84-Year Season Simulator</h3>
+            <p style="color: #D5FBFC; font-size: 14px;">Select a phase of Uranus's orbit (97.77° tilt):</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 15px;">
+                <button onclick="setUranusPhase('north-solstice')" style="padding: 8px 12px; background: #65868B; color: #D5FBFC; border: 1px solid #BBE1E4; border-radius: 5px; cursor: pointer;">North Solstice</button>
+                <button onclick="setUranusPhase('equinox-1')" style="padding: 8px 12px; background: #65868B; color: #D5FBFC; border: 1px solid #BBE1E4; border-radius: 5px; cursor: pointer;">Spring Equinox</button>
+                <button onclick="setUranusPhase('south-solstice')" style="padding: 8px 12px; background: #65868B; color: #D5FBFC; border: 1px solid #BBE1E4; border-radius: 5px; cursor: pointer;">South Solstice</button>
+                <button onclick="setUranusPhase('equinox-2')" style="padding: 8px 12px; background: #65868B; color: #D5FBFC; border: 1px solid #BBE1E4; border-radius: 5px; cursor: pointer;">Autumn Equinox</button>
+            </div>
+            <div id="uranusSeasonDisplay" style="color: #42f59b; font-size: 15px; min-height: 85px; text-align: left; padding: 12px; background: rgba(0,0,0,0.3); border-radius: 6px; line-height: 1.4;">
+                Click a phase above to simulate sunlight and seasons across Uranus's 84-Earth-year orbit.
+            </div>
+        </div>
+
+        <script>
+            const uranusPhases = {
+                "north-solstice": "North Pole points toward the Sun: Continuous daylight bathes the north for ~21 Earth years, while the south is locked in a 21-year dark winter.",
+                "equinox-1": "Equinox (~21 years later): The Sun shines directly over the equator, bringing day-night cycles across the globe and sparking dynamic cloud activity.",
+                "south-solstice": "South Pole points toward the Sun (~42 years in): Continuous sunlight hits the southern hemisphere while the northern side endures a 21-year dark winter.",
+                "equinox-2": "Second Equinox (~63 years in): Sunlight aligns with the equator again as Uranus heads back toward completing its 84-Earth-year orbit."
+            };
+
+            function setUranusPhase(phaseKey) {
+                document.getElementById('uranusSeasonDisplay').innerText = uranusPhases[phaseKey];
+            }
+        </script>
+
+        <!-- ================= CREDITS & FOOTER ================= -->
+        <br>
+        <p style="color:white">
+            Credit: https://science.nasa.gov/uranus/facts/
+        </p>
+    </body>
+</html>

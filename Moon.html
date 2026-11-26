@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Solar System Project</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* --- Container & Layout Styles --- */
+            .container {
+                background-color: #94908D;
+                width: 1125px;
+                border: 5px solid #DAD9D7;
+                padding: 10px;
+            }
+            .big-text {
+               font-size: 30px;
+               margin-bottom: 5px; 
+            }
+
+            /* --- Sticky Navigation Bar Styles --- */
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                display: flex; 
+                background-color: #333;
+            }
+            .navbar a {
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* --- Dropdown Menu Styles --- */
+            .dropdown {
+                position: relative;
+            }
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* --- Calculator Card Styles --- */
+            .calculator-card {
+                background-color: #161b26;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+                width: 320px;
+                text-align: center;
+                margin: 20px 0;
+            }
+            .input-group {
+                margin-bottom: 15px;
+                text-align: left;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 14px;
+                color: #a0aec0;
+            }
+            input, select {
+                width: 100%;
+                padding: 10px;
+                border-radius: 6px;
+                border: 1px solid #2d3748;
+                background-color: #1a202c;
+                color: #fff;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+            button {
+                width: 100%;
+                padding: 12px;
+                background-color: #0066cc;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background 0.2s;
+            }
+            button:hover {
+                background-color: #0052a3;
+            }
+            .result {
+                margin-top: 20px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #42f59b;
+                min-height: 24px;
+            }
+
+            /* Styling for images to make them fit containers nicely */
+            .planet-img {
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                display: block;
+                margin: 15px auto;
+                border-radius: 12px;
+                border: 4px solid #d6bd8d;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            }
+
+            .image-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin: 15px 0;
+            }
+
+            .image-card {
+                flex: 1 1 300px;
+                max-width: 450px;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 12px;
+                border-radius: 10px;
+                border: 2px solid #d6bd8d;
+                text-align: center;
+                margin: 0;
+            }
+
+            .image-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .image-card figcaption {
+                color: #fff;
+                font-weight: bold;
+                margin-top: 8px;
+                font-size: 0.95rem;
+            }
+        </style>
+    </head>
+    <body style="background-color:white;">
+        
+        <!-- ================= NAVIGATION BAR ================= -->
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Other Solar System Planet 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Sun.html"> Sun</a>
+                    <a href="Mercury.html"> Mercury</a>
+                    <a href="Venus.html"> Venus</a>
+                    <a href="Earth.html"> Earth</a>
+                    <a href="Mars.html"> Mars</a>
+                    <a href="Jupiter.html"> Jupiter</a>
+                    <a href="Saturn.html"> Saturn</a>
+                    <a href="Uranus.html"> Uranus</a>
+                    <a href="Neptune.html"> Neptune</a>
+                    <a href="Pluto.html"> Pluto</a>
+                </div>
+            </div> 
+        </div>
+
+        <!-- ================= PAGE HEADING & INTRO ================= -->
+        <h1 style="color:#C3C2BE;">Moon Information</h1>
+        <div class="container">
+            <p style="color:#31302E">
+               Our Moon shares a name with all moons simply because people didn't know other moons existed until Galileo Galilei discovered four moons orbiting Jupiter in 1610. 
+               In Latin, the Moon was called Luna, which is the main adjective for all things Moon-related: lunar.
+               The many missions that have explored the Moon have found no evidence to suggest it has its own living things. 
+               However, the Moon could be the site of future colonization by humans. 
+               The discovery that the Moon harbors water ice, and that the highest concentrations occur within darkened craters at the poles, makes the Moon a little more hospitable for future human colonists.
+            </p>
+        </div>
+        
+        <!-- ================= GALLERY SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#C3C2BE; text-align: center;">Moon Feature Gallery</h2>
+        <div class="container">
+            <div class="image-gallery">
+                <figure class="image-card">
+                    <img src="Images/Moon_landing.jpg" 
+                         alt="One of the Frist Moon Landing">
+                    <figcaption>Apollo Landing 11 Moon Landing</figcaption>
+                </figure>
+                <figure class="image-card">
+                    <img src="Images/moon_phases.jpg" 
+                         alt="All of the Monn Phases">
+                    <figcaption>Moon Phases</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- ================= SIZE AND DISTANCE SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#C3C2BE;">Size and Distance</h2>
+        <div class="container">
+            <p style="color:#31302E">
+                With a radius of about 1,080 miles (1,740 kilometers), the Moon is less than a third of the width of Earth. 
+                If Earth were the size of a nickel, the Moon would be about as big as a coffee bean. 
+                The Moon is an average of 238,855 miles (384,400 kilometers) away. 
+                That means 30 Earth-sized planets could fit in between Earth and the Moon. 
+                The Moon is slowly moving away from Earth, getting about an inch farther away each year.
+            </p>
+        </div>
+        
+        <!-- ================= ORBIT AND ROTATION SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#C3C2BE;">Orbit and Rotation</h2>
+        <div class="container">
+            <p style="color:#31302E">
+                The Moon is rotating at the same rate that it revolves around Earth (called synchronous rotation), so the same hemisphere faces Earth all the time. 
+                Some people call the far side – the hemisphere we never see from Earth – the "dark side", but that's misleading. 
+                As the Moon orbits Earth, different parts are in sunlight or darkness at different times. 
+                The changing illumination is why, from our perspective, the Moon goes through phases. 
+                During a "full moon," the hemisphere of the Moon we can see from Earth is fully illuminated by the Sun. 
+                And a "new moon" occurs when the far side of the Moon has full sunlight, and the side facing us is having its night. 
+                The Moon makes a complete orbit around Earth in 27 Earth days and rotates or spins at that same rate, or in that same amount of time. 
+                Because Earth is moving as well – rotating on its axis as it orbits the Sun – from our perspective, the Moon appears to orbit us every 29 days.
+            </p>
+        </div>
+        
+        <!-- ================= FORMATION SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#C3C2BE;">Formation</h2>
+        <div class="container">
+            <p style="color:#31302E">
+                When the solar system settled into its current layout about 4.5 billion years ago, Earth formed when gravity pulled swirling gas and dust in to become the third planet from the Sun. 
+                Like its fellow terrestrial planets, Earth has a central core, a rocky mantle, and a solid crust.  
+            </p>
+        </div>
+        
+        <!-- ================= STRUCTURE SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#C3C2BE;">Structure</h2>
+        <div class="container">
+            <p style="color:#31302E">
+                The Moon likely formed after a Mars-sized body collided with Earth several billion years ago. 
+                The resulting debris from both Earth and the impactor accumulated to form our natural satellite 239,000 miles (384,000 kilometers) away. 
+                The newly formed Moon was in a molten state, but within about 100 million years, most of the global "magma ocean" had crystallized, with less-dense rocks floating upward and eventually forming the lunar crust.
+            </p>
+        </div>
+        
+        <!-- ================= SURFACE SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#C3C2BE;">Surface</h2>
+        <div class="container">
+            <p style="color:#31302E">
+                With too sparse an atmosphere to impede impacts, a steady rain of asteroids, meteoroids, and comets strikes the surface of the Moon, leaving numerous craters behind. 
+                Tycho Crater is more than 52 miles (85 kilometers) wide. Over billions of years, these impacts have ground up the surface of the Moon into fragments ranging from huge boulders to powder. 
+                Nearly the entire Moon is covered by a rubble pile of charcoal-gray, powdery dust, and rocky debris called the lunar regolith. 
+                Beneath is a region of fractured bedrock referred to as the megaregolith. 
+                The light areas of the Moon are known as the highlands. 
+                The dark features, called maria (Latin for seas), are impact basins that were filled with lava between 4.2 and 1.2 billion years ago. 
+                These light and dark areas represent rocks of different compositions and ages, which provide evidence for how the early crust may have crystallized from a lunar magma ocean. 
+                The craters themselves, which have been preserved for billions of years, provide an impact history for the Moon and other bodies in the inner solar system. 
+                The temperature on the Moon reaches about 260 degrees Fahrenheit (127 degrees Celsius) when in full Sun, but in darkness, the temperatures plummet to about -280 degrees Fahrenheit (-173 degrees Celsius).
+            </p>
+        </div>
+        
+        <!-- ================= ATMOSPHERE SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#C3C2BE;">Atmosphere</h2>
+        <div class="container">
+            <p style="color:#31302E">
+                The Moon has a very thin and weak atmosphere. 
+                It does not provide any protection from the Sun's radiation or impacts from meteoroids.
+            </p>
+        </div>
+        
+        <!-- ================= MAGNETOSPHERE SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#C3C2BE;">Magnetosphere</h2>
+        <div class="container">
+            <p style="color:#31302E">
+                The early Moon may have developed an internal dynamo, the mechanism for generating global magnetic fields for terrestrial planets, but today, the Moon has a very weak magnetic field. 
+                The magnetic field here on Earth is many thousands of times stronger than the Moon's magnetic field.
+            </p>
+        </div>
+        <br>
+
+        <!-- ================= INTERACTIVE WEIGHT CALCULATOR WIDGET ================= -->
+        <div class="calculator-card">
+            <h2>Weight on The Moon</h2>
+            
+            <div class="input-group">
+                <label for="earthWeight">Your Earth Weight (lbs or kg):</label>
+                <input type="number" id="earthWeight" placeholder="Enter weight..." min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="planetSelect">Select a Celestial Body:</label>
+                <select id="planetSelect">
+                    <option value="0.166">The Moon</option>
+                </select>
+            </div>
+            <button onclick="calculateWeight()">Calculate Weight</button>
+            <div class="result" id="resultDisplay"></div>
+        </div>
+
+        <!-- ================= JAVASCRIPT CALCULATOR LOGIC ================= -->
+        <script>
+            function calculateWeight() {
+                // Grab input values and DOM elements
+                const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+                const planetSelect = document.getElementById('planetSelect');
+                const gravityMultiplier = parseFloat(planetSelect.value);
+                const planetName = planetSelect.options[planetSelect.selectedIndex].text;
+                const resultDisplay = document.getElementById('resultDisplay');
+
+                // Validation check for negative or empty values
+                if (isNaN(earthWeight) || earthWeight <= 0) {
+                    resultDisplay.style.color = '#ff4d4d';
+                    resultDisplay.innerText = "Please enter a valid weight.";
+                    return;
+                }
+                
+                // Calculate weight on the Moon
+                const spaceWeight = (earthWeight * gravityMultiplier).toFixed(2);
+
+                // Display result
+                resultDisplay.style.color = '#42f59b';
+                resultDisplay.innerText = `On ${planetName}, you would weigh ${spaceWeight}!`;
+            }
+        </script>
+        
+        <!-- ================= CREDITS & FOOTER ================= -->
+        <br>
+        <p style="color:white;">
+            https://science.nasa.gov/moon/facts/
+        </p>
+    </body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Solar System Project</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* --- Container & Layout Styles --- */
+            .container {
+                background-color: #c3924f;
+                width: 1125px;
+                border: 5px solid #c4b08b;
+                padding: 10px;
+            }
+            .big-text {
+                font-size: 30px; 
+                margin-bottom: 5px; 
+            }
+
+            /* --- Sticky Navigation Bar Styles --- */
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                display: flex; 
+                background-color: #333;
+            }
+
+            .navbar a {
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* --- Dropdown Menu Styles --- */
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* --- Interactive Fact Card Widget Styles --- */
+            .card {
+                background: #c3924f;
+                padding: 30px;
+                border: 5px solid #d6bd8d;
+                border-radius: 16px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                text-align: center;
+                max-width: 400px;
+                width: 90%;
+                margin: 20px 0;
+            }
+
+            h2 {
+                color: #333;
+                margin-top: 0;
+            }
+
+            .fact-display {
+                font-size: 1.1rem;
+                color: Brown;
+                min-height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+                line-height: 1.5;
+            }
+
+            button {
+                background-color: Green;
+                color: white;
+                border: 5px solid #d6bd8d;
+                padding: 12px 24px;
+                font-size: 1rem;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: transform 0.1s, background-color 0.2s;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            button:hover {
+                background-color: #ff5252;
+            }
+
+            button:active {
+                transform: scale(0.98);
+            }
+
+            /* Styling for images to make them fit containers nicely */
+            .planet-img {
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                display: block;
+                margin: 15px auto;
+                border-radius: 12px;
+                border: 4px solid #d6bd8d;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            }
+
+            .image-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin: 15px 0;
+            }
+
+            .image-card {
+                flex: 1 1 300px;
+                max-width: 450px;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 12px;
+                border-radius: 10px;
+                border: 2px solid #d6bd8d;
+                text-align: center;
+                margin: 0;
+            }
+
+            .image-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .image-card figcaption {
+                color: #fff;
+                font-weight: bold;
+                margin-top: 8px;
+                font-size: 0.95rem;
+            }
+        </style>
+    </head>
+
+    <body style="background-color: #222;">
+        
+        <!-- ================= NAVIGATION BAR ================= -->
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Other Solar System Planet 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Sun.html">Sun</a>
+                    <a href="Mercury.html">Mercury</a>
+                    <a href="Venus.html">Venus</a>
+                    <a href="Earth.html">Earth</a>
+                    <a href="Moon.html">Earth Moon</a>
+                    <a href="Mars.html">Mars</a>
+                    <a href="Jupiter.html">Jupiter</a>
+                    <a href="Uranus.html">Uranus</a>
+                    <a href="Neptune.html">Neptune</a>
+                    <a href="Pluto.html">Pluto</a>
+                </div>
+            </div> 
+        </div>
+
+        <!-- ================= PAGE HEADING & INTRO ================= -->
+        <h1 style="color:#e2bf7d">Saturn Information</h1>
+        <div class="container">
+            <p style="color:#eddbad">
+                Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium. 
+                Saturn is not the only planet to have rings, but none are as spectacular or as complex as Saturn's. Saturn also has dozens of moons.  
+                From the jets of water that spray from Saturn's moon Enceladus to the methane lakes on smoggy Titan, the Saturn system is a rich source of scientific discovery and still holds many mysteries.  
+            </p>
+        </div>
+        <br>
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#e2bf7d; text-align: center;">Saturn Feature Gallery</h2>
+        <div class="container">
+            <div class="image-gallery">
+                <figure class="image-card">
+                    <img src="Images/Saturn_Ring.jpg" 
+                         alt="A view of Saturn">
+                    <figcaption>Saturn</figcaption>
+                </figure>
+                <figure class="image-card">
+                    <img src="Images/Closer_View_Ring.jpg" 
+                         alt="A Close up Shot of Saturn Ring">
+                    <figcaption>Closer Saturn Ring</figcaption>
+                </figure>
+            </div>
+        </div>
+        
+        <!-- ================= SIZE AND DISTANCE SECTION ================= -->
+        <h2 class="big-text" style="color:#e2bf7d;">Size and Distance</h2>
+        <div class="container">
+            <p style="color:#eddbad">
+                With an equatorial diameter of about 74,897 miles (120,500 kilometers), Saturn is 9 times wider than Earth. 
+                If Earth were the size of a nickel, Saturn would be about as big as a volleyball.  
+                From an average distance of 886 million miles (1.4 billion kilometers), Saturn is 9.5 astronomical units away from the Sun. 
+                One astronomical unit (abbreviated as AU), is the distance from the Sun to Earth. 
+                From this distance, it takes sunlight 80 minutes to travel from the Sun to Saturn.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ORBIT AND ROTATION SECTION ================= -->
+        <h2 class="big-text" style="color:#e2bf7d;">Orbit and Rotation</h2>
+        <div class="container">
+            <p style="color:#eddbad">
+                Saturn has the second-shortest day in the solar system. 
+                One day on Saturn takes only 10.7 hours (the time it takes for Saturn to rotate or spin around once), and Saturn makes a complete orbit around the Sun (a year in Saturnian time) in about 29.4 Earth years (10,756 Earth days).  
+                Its axis is tilted by 26.73 degrees with respect to its orbit around the Sun, which is similar to Earth's 23.5-degree tilt. 
+                This means that, like Earth, Saturn experiences seasons.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= RINGS SECTION ================= -->
+        <h2 class="big-text" style="color:#e2bf7d;">Rings</h2>
+        <div class="container">
+            <p style="color:#eddbad">
+                Saturn's rings are thought to be pieces of comets, asteroids, or shattered moons that broke up before they reached the planet, torn apart by Saturn's powerful gravity. 
+                They are made of billions of small chunks of ice and rock coated with other materials such as dust. 
+                The ring particles mostly range from tiny, dust-sized icy grains to chunks as big as a house. 
+                A few particles are as large as mountains. 
+                The rings would look mostly white if you looked at them from the cloud tops of Saturn, and interestingly, each ring orbits at a different speed around the planet.  
+                Saturn's ring system extends up to 175,000 miles (282,000 kilometers) from the planet, yet the vertical height is typically about 30 feet (10 meters) in the main rings. 
+                Named alphabetically in the order they were discovered, the rings are relatively close to each other, 
+                with the exception of a gap measuring 2,920 miles (4,700 kilometers) in width called the Cassini Division that separates Rings A and B. 
+                The main rings are A, B, and C. Rings D, E, F, and G are fainter and more recently discovered.  
+                Starting at Saturn and moving outward, there is the D ring, C ring, B ring, Cassini Division, 
+                A ring, F ring, G ring, and finally, the E ring. Much farther out, there is the very faint Phoebe ring in the orbit of Saturn's moon Phoebe.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= FORMATION SECTION ================= -->
+        <h2 class="big-text" style="color:#e2bf7d;">Formation</h2>
+        <div class="container">
+            <p style="color:#eddbad">
+                Saturn took shape when the rest of the solar system formed about 4.5 billion years ago when gravity pulled swirling gas and dust in to become this gas giant. 
+                About 4 billion years ago, Saturn settled into its current position in the outer solar system, where it is the sixth planet from the Sun. 
+                Like Jupiter, Saturn is mostly made of hydrogen and helium, the same two main components that make up the Sun.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= STRUCTURE SECTION ================= -->
+        <h2 class="big-text" style="color:#e2bf7d;">Structure</h2>
+        <div class="container">
+            <p style="color:#eddbad">
+                Like Jupiter, Saturn is made mostly of hydrogen and helium. 
+                At Saturn's center is a dense core of metals like iron and nickel surrounded by rocky material and other compounds solidified by intense pressure and heat. 
+                It is enveloped by liquid metallic hydrogen inside a layer of liquid hydrogen –similar to Jupiter's core but considerably smaller.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= SURFACE SECTION ================= -->
+        <h2 class="big-text" style="color:#e2bf7d;">Surface</h2>
+        <div class="container">
+            <p style="color:#eddbad">
+               As a gas giant, Saturn doesn’t have a true surface. 
+               The planet is mostly swirling gases and liquids deeper down. 
+               While a spacecraft would have nowhere to land on Saturn, it wouldn’t be able to fly through unscathed either. 
+               The extreme pressures and temperatures deep inside the planet would crush, melt, and vaporize any spacecraft trying to fly into the planet.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ATMOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#e2bf7d;">Atmosphere</h2>
+        <div class="container">
+            <p style="color:#eddbad">
+                Saturn is blanketed with clouds that appear as faint stripes, jet streams, and storms. The planet is many different shades of yellow, brown, and gray.  
+                Winds in the upper atmosphere reach 1,600 feet per second (500 meters per second) in the equatorial region.
+                In contrast, the strongest hurricane-force winds on Earth top out at about 360 feet per second (110 meters per second). 
+                And the pressure – the same kind you feel when you dive deep underwater – is so powerful it squeezes gas into a liquid.  
+                Saturn's north pole has an interesting atmospheric feature – a six-sided jet stream. 
+                This hexagon-shaped pattern was first noticed in images taken by the twin Voyager spacecraft in the early 80s. 
+                Later, it was more closely observed by the Cassini spacecraft. 
+                Spanning about 20,000 miles (30,000 kilometers) across, the hexagon is a wavy jet stream of 200-mile-per-hour winds (about 322 kilometers per hour) with a massive, rotating storm at the center.  
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= MAGNETOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#e2bf7d;">Magnetosphere</h2>
+        <div class="container">
+            <p style="color:#eddbad">
+                Saturn's magnetic field is smaller than Jupiter's but still 578 times as powerful as Earth's. 
+                Saturn, the rings, and many of the satellites lie totally within Saturn's enormous magnetosphere, 
+                the region of space in which the behavior of electrically charged particles is influenced more by Saturn's magnetic field than by the solar wind.  
+                Aurorae occur when charged particles spiral into a planet's atmosphere along magnetic field lines. 
+                On Earth, these charged particles come from the solar wind. 
+                Cassini showed that at least some of Saturn's aurorae are like Jupiter's and are largely unaffected by the solar wind. 
+                Instead, these aurorae are caused by a combination of particles ejected from Saturn's moons and Saturn's magnetic field's rapid rotation rate. 
+                But these "non-solar-originating" aurorae are not completely understood yet.
+            </p>
+        </div>
+        <br>
+        
+        <!-- Interactive Saturn Ring & Moon Inspector Widget -->
+        <div style="margin: 20px auto; background: #2c2010; padding: 20px; border-radius: 10px; border: 2px solid #e2bf7d; text-align: center; max-width: 430px;">
+            <h3 style="color: #e2bf7d; margin-top: 0;">Saturn Ring & Moon Inspector</h3>
+            <p style="color: #eddbad; font-size: 14px;">Select a ring feature or moon to inspect:</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 15px;">
+                <button onclick="inspectSaturn('main-rings')" style="padding: 8px 12px; background: #c3924f; color: #fff; border: 1px solid #d6bd8d; border-radius: 5px; cursor: pointer;">A, B & C Rings</button>
+                <button onclick="inspectSaturn('cassini')" style="padding: 8px 12px; background: #c3924f; color: #fff; border: 1px solid #d6bd8d; border-radius: 5px; cursor: pointer;">Cassini Division</button>
+                <button onclick="inspectSaturn('faint-rings')" style="padding: 8px 12px; background: #c3924f; color: #fff; border: 1px solid #d6bd8d; border-radius: 5px; cursor: pointer;">D, E, F & G Rings</button>
+                <button onclick="inspectSaturn('enceladus')" style="padding: 8px 12px; background: #c3924f; color: #fff; border: 1px solid #d6bd8d; border-radius: 5px; cursor: pointer;">Enceladus</button>
+            </div>
+            <div id="saturnInspectorDisplay" style="color: #42f59b; font-size: 15px; min-height: 85px; text-align: left; padding: 12px; background: rgba(0,0,0,0.35); border-radius: 6px; line-height: 1.4;">
+                Click a feature above to explore Saturn's rings and moons.
+            </div>
+        </div>
+
+        <script>
+            const saturnFeatures = {
+                "main-rings": "Rings A, B, and C are Saturn's primary rings, made of billions of ice and rock particles ranging from tiny grains to house- or mountain-sized chunks, stretching up to 175,000 miles out while staying typically ~30 feet thick.",
+                "cassini": "The Cassini Division is a gap about 2,920 miles (4,700 km) wide separating Saturn's bright A and B rings.",
+                "faint-rings": "Beyond the main bands lie fainter rings (D, E, F, and G)—and even farther out near Phoebe's orbit, the very faint Phoebe ring.",
+                "enceladus": "Saturn's icy moon Enceladus shoots geysers of water vapor, icy particles, and organic compounds, making it one of the brightest, most reflective bodies in the solar system."
+            };
+
+            function inspectSaturn(key) {
+                document.getElementById('saturnInspectorDisplay').innerText = saturnFeatures[key];
+            }
+        </script>
+
+        <!-- ================= CREDITS & FOOTER ================= -->
+        <br>
+        <p style="color:white">
+            Credit: https://science.nasa.gov/saturn/facts/
+        </p>
+        <p style="color:white">
+            Credit: https://www.factretriever.com/saturn-facts
+        </p>
+    </body>
+</html>

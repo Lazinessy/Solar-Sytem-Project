@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Solar System Project</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+        ul li{
+            margin: 8px 0;
+        }
+        ul li a{
+            background: white;
+            color: black;
+            padding: 4px 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+    <h2 style ="color:white">>Welcome to the Solar System</h2>
+    <ul>
+        <li><a href="Sun.html">Visit the Sun</a></li>
+        <li><a href="Mercury.html">Visit the Mercury</a></li>
+        <li><a href="Venus.html">Visit the Venus</a></li>
+        <li><a href="Earth.html">Visit the Earth</a></li>
+        <li><a href="Moon.html">Visit the Earth Moon</a></li>
+        <li><a href="Mars.html">Visit the Mars</a></li>
+        <li><a href="Jupiter.html">Visit the Jupiter</a></li>
+        <li><a href="Saturn.html">Visit the Saturn</a></li>
+        <li><a href="Uranus.html">Visit the Uranus</a></li>
+        <li><a href="Neptune.html">Visit the Neptune</a></li>
+        <li><a href="Pluto.html">Visit the Pluto</a></li>
+    </ul>
+    <!-- ================= Random Page Button ================= -->
+    <body>
+    <button onclick="goToRandomPage()"> Go to Random Page</button>
+    <script>
+        function goToRandomPage() {
+            const pages = [
+                "Sun.html",
+                "Mercury.html",
+                "Venus.html",
+                "Earth.html",
+                "Moon.html",
+                "Jupiter.html",
+                "Saturn.html",
+                "Uranus.html",
+                "Neptune.html",
+                "Pluto.html"
+            ];
+            const randomIndex = Math.floor(Math.random() * pages.length);
+            const randomPage = pages[randomIndex];
+            window.location.href = randomPage;
+        }
+    </script>
+</body>
+</html>

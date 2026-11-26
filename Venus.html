@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Solar System Project</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* --- Container & Layout Styles --- */
+            .container {
+                background-color: #d3a567;
+                width: 1125px;
+                border: 5px solid #ad8d54;
+                padding: 10px;
+            }
+            .big-text {
+                font-size: 30px; 
+                margin-bottom: 5px; 
+            }
+
+            /* --- Sticky Navigation Bar Styles --- */
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                display: flex; 
+                background-color: #333;
+            }
+
+            .navbar a {
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* --- Dropdown Menu Styles --- */
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* --- Interactive Fact Card Widget Styles --- */
+            .card {
+                background: #d3a567;
+                padding: 30px;
+                border: 5px solid #d6bd8d;
+                border-radius: 16px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                text-align: center;
+                max-width: 400px;
+                width: 90%;
+                margin: 20px 0;
+            }
+
+            h2 {
+                color: #333;
+                margin-top: 0;
+            }
+
+            .fact-display {
+                font-size: 1.1rem;
+                color: Brown;
+                min-height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+                line-height: 1.5;
+            }
+
+            button {
+                background-color: orange;
+                color: white;
+                border: 5px solid #d6bd8d;
+                padding: 12px 24px;
+                font-size: 1rem;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: transform 0.1s, background-color 0.2s;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            button:hover {
+                background-color: #ff5252;
+            }
+
+            button:active {
+                transform: scale(0.98);
+            }
+
+            /* Styling for images to make them fit containers nicely */
+            .planet-img {
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                display: block;
+                margin: 15px auto;
+                border-radius: 12px;
+                border: 4px solid #d6bd8d;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            }
+
+            .image-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin: 15px 0;
+            }
+
+            .image-card {
+                flex: 1 1 300px;
+                max-width: 450px;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 12px;
+                border-radius: 10px;
+                border: 2px solid #d6bd8d;
+                text-align: center;
+                margin: 0;
+            }
+
+            .image-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .image-card figcaption {
+                color: #fff;
+                font-weight: bold;
+                margin-top: 8px;
+                font-size: 0.95rem;
+            }
+        </style>
+    </head>
+    <body style="background-color: #222;">
+        
+        <!-- ================= NAVIGATION BAR ================= -->
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Other Solar System Planet 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Sun.html">Sun</a>
+                    <a href="Mercury.html">Mercury</a>
+                    <a href="Earth.html">Earth</a>
+                    <a href="Moon.html">Earth Moon</a>
+                    <a href="Mars.html">Mars</a>
+                    <a href="Jupiter.html">Jupiter</a>
+                    <a href="Saturn.html">Saturn</a>
+                    <a href="Uranus.html">Uranus</a>
+                    <a href="Neptune.html">Neptune</a>
+                    <a href="Pluto.html">Pluto</a>
+                </div>
+            </div> 
+        </div>
+
+        <!-- ================= PAGE HEADING & INTRO ================= -->
+        <h1 style="color:#d3a567">Venus Information</h1>
+        
+        <div class="container">
+            <p style="color:#EFEFEF">
+               Venus is the second planet from the Sun, and Earth's closest planetary neighbor. 
+               Venus is the third brightest object in the sky after the Sun and Moon. 
+               Venus spins slowly in the opposite direction from most planets.  
+               Venus is similar in structure and size to Earth, and is sometimes called Earth's evil twin. 
+               Its thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system with surface temperatures hot enough to melt lead 
+               — about 872 degrees Fahrenheit (467 Celsius). And the atmospheric pressure at the surface is about 93 times what it is at sea level on Earth. 
+               Below Venus' dense, persistent clouds, the surface has volcanoes and deformed mountains.
+            </p>
+        </div>
+        <br>
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <br>
+        <h2 class="big-text" style="color:#d3a567; text-align: center;">Venus Feature Gallery</h2>
+        <div class="container">
+            <div class="image-gallery">
+                <figure class="image-card">
+                    <img src="Images/Venus.jpg" 
+                         alt="Just Venus">
+                    <figcaption>Venus</figcaption>
+                </figure>
+                <figure class="image-card">
+                    <img src="Images/Venus_sulfur.jpg" 
+                         alt="Sulfur Cloud of Venus">
+                    <figcaption>Venus Sulfur Clouds</figcaption>
+                </figure>
+            </div>
+        </div>
+        
+        <!-- ================= SIZE AND DISTANCE SECTION ================= -->
+        <h2 class="big-text" style="color:#d3a567;">Size and Distance</h2>
+        <div class="container">
+            <p style="color:#EFEFEF">
+                Venus orbits the Sun from an average distance of 67 million miles (108 million kilometers), 
+                or 0.72 astronomical units (1 astronomical unit, abbreviated AU, is the distance from the Sun to Earth). 
+                Sunlight takes about six minutes to travel from the Sun to Venus, compared to about eight minutes for the Sun and Earth.  
+                Earth's nearness to Venus is a matter of perspective. The planet is nearly as big around as Earth. Its diameter at its equator is about 7,521 miles (12,104 kilometers), versus 7,926 miles (12,756 kilometers) for Earth. 
+                From Earth, Venus is the brightest object in the night sky after our own Moon. 
+                The ancients, therefore, gave it great importance in their cultures, even thinking it was two objects: a morning star and an evening star. 
+                That’s where the trick of perspective comes in. Because Venus’ orbit is closer to the Sun than ours, the two of them — from our viewpoint — never stray far from each other. 
+                The ancient Egyptians and Greeks saw Venus in two guises: first in one orbital position (seen in the morning), then another (your “evening” Venus), just at different times of the year.  
+                At its nearest to Earth, Venus is about 24 million miles away (about 38 million kilometers). 
+                But most of the time the two planets are farther apart. The maximum distance between Venus and Earth is about 162 million miles (261 million kilometers). 
+                Mercury, the innermost planet, actually spends more time in Earth’s proximity than Venus.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ORBIT AND ROTATION SECTION ================= -->
+        <h2 class="big-text" style="color:#d3a567;">Orbit and Rotation</h2>
+        <div class="container">
+            <p style="color:#EFEFEF">
+                Spending a day on Venus would be quite a disorienting experience — that is, if your spacecraft or spacesuit could protect you from the extreme heat and crushing air pressure. 
+                For one thing, your “day” would be 243 Earth days long — longer even than a Venus year (one trip around the Sun), which takes only 225 Earth days. 
+                For another, because of the planet's extremely slow rotation, sunrise to sunset would take 117 Earth days. 
+                And by the way, the Sun would rise in the west and set in the east, because Venus spins backward compared to Earth.  
+                While you’re waiting, don’t expect any seasonal relief from the unrelenting temperatures. 
+                On Earth, with its spin axis tilted by about 23 degrees, we experience summer when our part of the planet (our hemisphere) receives the Sun’s rays more directly — a result of that tilt. 
+                In winter, the tilt means the rays are less direct. No such luck on Venus: Its very slight tilt is only three degrees, which is too little to produce noticeable seasons.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= FORMATION SECTION ================= -->
+        <h2 class="big-text" style="color:#d3a567;">Formation</h2>
+        <div class="container">
+            <p style="color:#EFEFEF">
+                The close similarities of early Venus and Earth, and their very different fates, provide a kind of test case for scientists who study planet formation. 
+                Similar size, similar interior structure, both harboring oceans in their younger days. 
+                Yet one is now an inferno, while the other is the only known world to host abundant life. The factors that set these planets on almost opposite paths began, most likely, in the swirling disk of gas and dust from which they were born. 
+                Somehow, 4.6 billion years ago that disk around our Sun accreted, cooled, and settled into the planets we know today. 
+                Better knowledge of the formation history of Venus could help us better understand Earth — and rocky planets around other stars.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= STRUCTURE SECTION ================= -->
+        <h2 class="big-text" style="color:#d3a567;">Structure</h2>
+        <div class="container">
+            <p style="color:#EFEFEF">
+                If we could slice Venus and Earth in half, pole to pole, and place them side by side, they would look remarkably similar. 
+                Each planet has an iron core enveloped by a hot-rock mantle; the thinnest of skins forms a rocky, exterior crust. 
+                On both planets, this thin skin changes form and sometimes erupts into volcanoes in response to the ebb and flow of heat and pressure deep beneath.  
+                On Earth, the slow movement of continents over thousands and millions of years reshapes the surface, a process known as “plate tectonics”. 
+                Something similar might have happened on Venus early in its history. 
+                Today a key element of this process could be operating: subduction, or the sliding of one continental “plate” beneath another, which can also trigger volcanoes. 
+                Subduction is believed to be the first step in creating plate tectonics.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= SURFACE SECTION ================= -->
+        <h2 class="big-text" style="color:#d3a567;">Surface</h2>
+        <div class="container">
+            <p style="color:#EFEFEF">
+                Venus is the hottest planet in our solar system, with surface temperatures about 872 degrees Fahrenheit (467 Celsius). 
+                And atmospheric pressure at the surface squeezes with the same force as being more than 3,000 feet underwater on Earth (930 meters). 
+                The Soviet Union sent a series of probes to Venus between 1961 and 1984 as part of its Venera program (Venera is Russian for Venus). 
+                Ten probes made it to the surface, and a few functioned briefly after landing. The longest survivor lasted two hours; the shortest, 23 minutes. 
+                Photos they snapped before the landers cooked show a barren, dim, and rocky landscape, and a sky that is likely some shade of sulfur yellow.  
+                Volcanoes and tectonic forces appear to have erased most traces of the early surface of Venus. 
+                Newer computer models indicate the resurfacing may have happened piecemeal over an extended period of time. 
+                The average age of surface features could be as young as 150 million years, with some older surfaces mixed in.  
+                Venus has valleys and high mountains dotted with thousands of volcanoes. Its surface features — most named for both real and mythical women 
+                — include Ishtar Terra, a rocky, highland area around the size of Australia near the north pole, and an even larger, South-America-sized region called Aphrodite Terra that stretches across the equator. 
+                One mountain reaches 36,000 feet (11 kilometers), higher than Mt. Everest. Notably, except for Earth, Venus has by far the fewest impact craters of any rocky planet.
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= ATMOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#d3a567;">Atmosphere</h2>
+        <div class="container">
+            <p style="color:#EFEFEF">
+                Venus’ atmosphere is one of extremes. With the hottest surface in the solar system, apart from the Sun itself, Venus is hotter even than the innermost planet, charbroiled Mercury. 
+                The atmosphere is mostly carbon dioxide — the same gas drives the greenhouse effect on both Venus and Earth — with dense clouds composed of sulfuric acid. 
+                The atmospheric pressure at the surface measures a crushing 93 times what it is at sea level on Earth. 
+                At the surface, the hot, high-pressure carbon dioxide behaves in a corrosive fashion. But higher up in the atmosphere, temperatures and pressure begin to ease.  
+            </p>
+        </div>
+        <br>
+        
+        <!-- ================= MAGNETOSPHERE SECTION ================= -->
+        <h2 class="big-text" style="color:#d3a567;">Magnetosphere</h2>
+        <div class="container">
+            <p style="color:#EFEFEF">
+                Even though Venus is similar in size to Earth and has a similar-sized iron core, the planet does not have its own internally generated magnetic field. 
+                Instead, Venus has what is known as an induced magnetic field. 
+                This weak magnetic field is created by the interaction of the Sun's magnetic field and the planet's outer atmosphere. 
+                Ultraviolet light from the Sun excites gases in Venus' outermost atmosphere; these electrically excited gases are called ions, and thus this region is called the ionosphere (Earth has an ionosphere as well). 
+                The solar wind — a million-mile-per-hour gale of electrically charged particles streaming continuously from the Sun — carries with it the Sun's magnetic field. 
+                When the Sun's magnetic field interacts with the electrically excited ionosphere of Venus, it creates or induces, a magnetic field there. 
+                This induced magnetic field envelops the planet and is shaped like an extended teardrop, or the tail of a comet, as the solar wind blows past Venus and outward into the solar system.  
+            </p>
+        </div>
+        <br>
+
+        <!-- ================= INTERACTIVE VENUS DAY, YEAR & SPIN EXPLORER ================= -->
+        <div style="margin: 20px auto; background: #2b2012; padding: 20px; border-radius: 10px; border: 2px solid #ad8d54; text-align: center; max-width: 430px;">
+            <h3 style="color: #d3a567; margin-top: 0;">Venus Day vs. Year & Spin Explorer</h3>
+            <p style="color: #EFEFEF; font-size: 14px;">Select a quirk of Venus's orbit and rotation:</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 15px;">
+                <button onclick="inspectVenus('day-vs-year')" style="padding: 8px 12px; background: #d3a567; color: #222; border: 1px solid #d6bd8d; border-radius: 5px; font-weight: bold; cursor: pointer;">243-Day Rotation</button>
+                <button onclick="inspectVenus('year')" style="padding: 8px 12px; background: #d3a567; color: #222; border: 1px solid #d6bd8d; border-radius: 5px; font-weight: bold; cursor: pointer;">225-Day Year</button>
+                <button onclick="inspectVenus('retrograde')" style="padding: 8px 12px; background: #d3a567; color: #222; border: 1px solid #d6bd8d; border-radius: 5px; font-weight: bold; cursor: pointer;">Backward Spin</button>
+                <button onclick="inspectVenus('pressure-heat')" style="padding: 8px 12px; background: #d3a567; color: #222; border: 1px solid #d6bd8d; border-radius: 5px; font-weight: bold; cursor: pointer;">872°F & 93x Pressure</button>
+            </div>
+            <div id="venusInspectorDisplay" style="color: #42f59b; font-size: 15px; min-height: 85px; text-align: left; padding: 12px; background: rgba(0,0,0,0.35); border-radius: 6px; line-height: 1.4;">
+                Click a button above to compare Venus's rotation, orbit, and surface extremes.
+            </div>
+        </div>
+        <!-- ================= JAVASCRIPT VENUS EXPLORER LOGIC ================= -->
+        <script>
+            const venusFeatures = {
+                "day-vs-year": "One rotation (a Venus day) takes 243 Earth days—actually longer than a full Venus year—with 117 Earth days from sunrise to sunset.",
+                "year": "Venus completes one orbit around the Sun in about 225 Earth days from an average distance of 67 million miles (0.72 AU), and its slight 3-degree tilt produces no noticeable seasons.",
+                "retrograde": "Venus spins backward compared to Earth and most planets, meaning the Sun appears to rise in the west and set in the east.",
+                "pressure-heat": "A runaway greenhouse effect of mostly carbon dioxide and sulfuric acid clouds heats Venus's surface to about 872°F (467°C) under crushing pressure ~93 times Earth's sea-level pressure."
+            };
+
+            function inspectVenus(key) {
+                const display = document.getElementById("venusInspectorDisplay");
+                display.innerText = venusFeatures[key] || "";
+            }
+        </script>
+
+        <!-- ================= CREDITS & FOOTER ================= -->
+        <br>
+        <p style="color:white">
+            Credit: https://science.nasa.gov/venus/venus-facts/
+        </p>
+        <p style="color:white">
+            Credit: https://thefactfile.org/venus-facts/
+        </p>
+    </body>
+</html>
